@@ -1,25 +1,27 @@
-import React from "react";
-import { Card } from "./components/Card";
-import { Layout } from "./components/Layout";
+import { Layout } from "./components/Layout/Layout";
+import styled from 'styled-components'
+
+const Box = styled.div`
+  background-color: orange;
+  border-radius: 25px;
+  padding-left: 15px;
+`
 
 function App() {
   return (
     <Layout>
-      <div>
-        <Card
-          id={1}
-          paragraph="Typescript"
-          details="TS para frontend e backend"
-        />
-        <Card id={2} paragraph="HTML" details="HTML para frontend" />
-        <Card id={3} paragraph="SQL" details="SQL para banco de dados" />
-        <Card
-          id={4}
-          paragraph="Python"
-          details="Python para analise de dados"
-        />
-      </div>
-      <div>Footer</div>
+      <Box>
+        <h1>Faça o login</h1>
+      </Box>
+      <label htmlFor='emailInput'>
+        Email
+      </label>
+      <input id='emailInput' type='email'/>
+
+      <label htmlFor='passwordInput'>
+        Senha
+      </label>
+      <input id='passwordInput' type='password' />
     </Layout>
   );
 }
