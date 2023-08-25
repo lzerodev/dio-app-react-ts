@@ -1,3 +1,4 @@
+import { login } from './services/login'
 import {
   Center,
   ChakraProvider,
@@ -54,6 +55,7 @@ function App() {
                 size="md"
                 width="100%"
                 marginTop="10px"
+                onClick={login}
               >
                 Login
               </Button>
