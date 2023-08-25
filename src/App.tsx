@@ -1,28 +1,67 @@
-import { Layout } from "./components/Layout/Layout";
-import styled from 'styled-components'
-
-const Box = styled.div`
-  background-color: orange;
-  border-radius: 25px;
-  padding-left: 15px;
-`
+import {
+  Center,
+  ChakraProvider,
+  Input,
+  Text,
+  Box,
+  Button,
+  PinInputField,
+  PinInput,
+  HStack,
+  Container,
+} from "@chakra-ui/react";
 
 function App() {
   return (
-    <Layout>
-      <Box>
-        <h1>Faça o login</h1>
+    <ChakraProvider>
+      <Box
+        maxWidth="100hv"
+        minHeight="100vh"
+        backgroundColor="#7f28b5"
+        padding="25px"
+        shadow="lg"
+      >
+        <Container maxW="md" centerContent>
+          <Box
+            backgroundColor="#FFFFFF"
+            borderRadius="25px"
+            padding="15px"
+            margin="200px"
+            maxWidth="600px"
+            shadow="lg"
+          >
+            <Center>
+              <Text fontSize="2xl" marginBottom={5}>
+                Faça o login
+              </Text>
+            </Center>
+            <Center>
+              <Input placeholder="email" size='lg' marginBottom={5} />
+            </Center>
+            <Center>
+              <HStack marginBottom={5}>
+                <PinInput type="alphanumeric" mask size="lg">
+                  <PinInputField />
+                  <PinInputField />
+                  <PinInputField />
+                  <PinInputField />
+                </PinInput>
+              </HStack>
+            </Center>
+            <Center>
+              <Button
+                colorScheme="purple"
+                size="md"
+                width="100%"
+                marginTop="10px"
+              >
+                Login
+              </Button>
+            </Center>
+          </Box>
+        </Container>
       </Box>
-      <label htmlFor='emailInput'>
-        Email
-      </label>
-      <input id='emailInput' type='email'/>
-
-      <label htmlFor='passwordInput'>
-        Senha
-      </label>
-      <input id='passwordInput' type='password' />
-    </Layout>
+    </ChakraProvider>
   );
 }
 
