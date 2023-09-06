@@ -5,14 +5,15 @@ describe ('login', () => {
 
     const mockAlert= jest.fn()
     window.alert = mockAlert
+    const mockEmail = 'leo@dio.me'
 
   it('Deve exibir um alert com boas vindas', () => {
-    login()
-    expect(window.alert).toBeCalled()
+    login(mockEmail)
+    expect(mockAlert).toHaveBeenCalledWith(`Bem vindo! leo@dio.me!`)
   })
 
-  it('Deve exibir um alert com boas vindas 2', () => {
-    login()
-    expect(mockAlert).toHaveBeenCalledWith('Bem vindo!')
+  it('Não deve exibir a mensagem de boas vindas sem o email', () => {
+    login(mockEmail)
+    expect(mockAlert).not.toHaveBeenCalledWith('Bem vindo!')
   })
 })

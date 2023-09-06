@@ -1,25 +1,24 @@
 import { ChakraProvider, Text, Button } from "@chakra-ui/react";
+import { MouseEventHandler } from "react";
+
 
 interface IButton {
-  id: number;
-  title: string;
-  event(): void;
+  onClick: MouseEventHandler
 }
 
-export const ButtonLogin = ({ id, title, event }: IButton) => {
-  console.log(id);
+export const ButtonLogin = ({ onClick }: IButton) => {
   return (
     <ChakraProvider>
       <Button
+        onClick={onClick}
         colorScheme="purple"
         size="md"
         width="100%"
         marginTop="10px"
-        onClick={event}
         shadow="lg"
         loadingText='Loging in...'
       >
-        <Text fontSize={20}>{title}</Text>
+        <Text fontSize={20}>Login</Text>
       </Button>
     </ChakraProvider>
   );

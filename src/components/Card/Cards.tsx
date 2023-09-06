@@ -9,17 +9,13 @@ import {
   HStack,
   Container,
 } from "@chakra-ui/react";
-
+import { useState } from "react";
 import { ButtonLogin } from "../Buttons/ButtonLogin";
+import { login } from "../../services/login";
 
-interface ICard {
-  id: number;
-  title: string;
-  event(): void;
-}
 
-export const Cards = ({ id, title, event }: ICard) => {
-  console.log(id);
+export const Cards = () => {
+  const [ email, setEmail ] = useState('')
   return (
     <ChakraProvider>
       <Box
@@ -44,12 +40,14 @@ export const Cards = ({ id, title, event }: ICard) => {
                 marginBottom={8}
                 fontFamily="Open Sans, sans-serif"
               >
-                {title}
+                Faça o login
               </Text>
             </Center>
             <Center>
               <Input
                 placeholder="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
                 size="lg"
                 marginBottom={5}
                 shadow="lg"
@@ -66,7 +64,7 @@ export const Cards = ({ id, title, event }: ICard) => {
               </HStack>
             </Center>
             <Center>
-              <ButtonLogin id={1} title="Login" event={event} />
+              <ButtonLogin onClick={() => login(email)} />
             </Center>
           </Box>
         </Container>
