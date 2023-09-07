@@ -8,43 +8,17 @@ import {
   HStack,
   Container,
 } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
-import { ButtonLogin } from "../Buttons/ButtonLogin";
-import { login } from "../../services/login";
-import { api } from "../../api";
+import { useState } from "react";
+import { ButtonLogin } from "./Buttons/ButtonLogin";
+import { login } from "../services/login";
 
-interface UserData {
-  email: string;
-  password: string;
-  name: string;
-}
+
+
 
 export const Cards = () => {
   const [email, setEmail] = useState<string>("");
-  const [userData, setUserData] = useState<null | UserData>();
-
-  useEffect(() => {
-    const getData = async () => {
-      const data = await api;
-      setUserData(data);
-    };
-    getData();
-  }, []);
 
   return (
-    <Box
-      backgroundColor="#7f28b5"
-      padding={10}
-      w="100%"
-      maxWidth="100%"
-      h="100%"
-      shadow="lg"
-    >
-      {userData === null || userData === undefined ? (
-        <h1>Loading...</h1>
-      ) : (
-        <h1>Informações carregadas</h1>
-      )}
 
       <Container maxW="fit-content" centerContent borderRadius={25}>
         <Box
@@ -60,9 +34,7 @@ export const Cards = () => {
               marginBottom={8}
               fontFamily="Open Sans, sans-serif"
             >
-              Faça o login,
-              <br></br>
-              {userData?.name}
+              Faça o login
             </Text>
           </Center>
           <Center>
@@ -90,6 +62,6 @@ export const Cards = () => {
           </Center>
         </Box>
       </Container>
-    </Box>
+
   );
 };

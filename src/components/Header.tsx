@@ -4,25 +4,21 @@ export const Header = () => {
   return (
     <ChakraProvider>
       <Box
-        maxWidth="100%"
-        minHeight="10vh"
-        padding={10}
+        maxWidth="100vh"
+        minHeight="5vh"
+        padding={5}
         backgroundColor="#FFFFFF"
         shadow="lg"
-        borderRadius={30}
+        borderRadius={25}
       >
         <Container maxW="lg" centerContent>
           <Box
             backgroundColor="#7f28b5"
             borderRadius={25}
             padding="5px"
-            w="100%"
             margin="5px"
-            maxWidth="100%"
+            maxWidth="100vh"
             shadow="lg"
-            display="flex"
-            mt="2"
-            alignItems="center"
           >
             <Container maxW="lg" centerContent>
               <Text as="b" 
@@ -31,7 +27,6 @@ export const Header = () => {
               fontWeight='semibold'
               letterSpacing='wide'
               textTransform='uppercase'
-              ml='2'
               fontFamily="Open Sans, sans-serif"
               >
                 Dio Bank

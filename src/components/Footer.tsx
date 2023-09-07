@@ -3,24 +3,12 @@ import { ChakraProvider, Text, Box, Container } from "@chakra-ui/react";
 export const Footer = () => {
   return (
     <ChakraProvider>
-      <Box
-        maxWidth="100%"
-        minHeight="10vh"
-        padding={5}
-        backgroundColor="#FFFFFF"
-        shadow="lg"
-        borderRadius={25}
-        >
         <Box
           backgroundColor=" #FFFFFF"
           borderRadius={25}
           padding="5px"
-          w="100%"
           margin="0px"
-          maxWidth="100%"
-          display='flex'
-          mt='0.5'
-          alignItems='center'
+          maxWidth="100vh"
           letterSpacing='wide'
         >
           <Container maxW="lg" centerContent>
@@ -32,7 +20,6 @@ export const Footer = () => {
             </Text>
           </Container>
         </Box>
-      </Box>
     </ChakraProvider >
   );
 };
