@@ -9,8 +9,8 @@ import {
   Container,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { ButtonLogin } from "./Buttons/ButtonLogin";
-import { login } from "../services/login";
+import { ButtonLogin } from "../Buttons/ButtonLogin";
+import { login } from "../../services/login";
 
 
 
