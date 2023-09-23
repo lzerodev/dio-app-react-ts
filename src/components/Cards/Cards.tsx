@@ -12,9 +12,6 @@ import { useState } from "react";
 import { ButtonLogin } from "../Buttons/ButtonLogin";
 import { login } from "../../services/login";
 
-
-
-
 export const Cards = () => {
   const [email, setEmail] = useState<string>("");
 
