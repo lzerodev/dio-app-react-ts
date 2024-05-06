@@ -4,8 +4,9 @@ export const Header = () => {
   return (
     <ChakraProvider>
       <Box
-        maxWidth="100vh"
-        minHeight="5vh"
+        marginTop="15"
+        maxWidth="100%"
+        minHeight="5%"
         padding={5}
         backgroundColor="#FFFFFF"
         shadow="lg"
@@ -17,7 +18,7 @@ export const Header = () => {
             borderRadius={25}
             padding="5px"
             margin="5px"
-            maxWidth="100vh"
+            maxWidth="100%"
             shadow="lg"
           >
             <Container maxW="lg" centerContent>
@@ -25,7 +26,7 @@ export const Header = () => {
               color="#FFFFFF" 
               fontSize="4xl" 
               fontWeight='semibold'
-              letterSpacing='wide'
+              letterSpacing='wider'
               textTransform='uppercase'
               fontFamily="Open Sans, sans-serif"
               >
